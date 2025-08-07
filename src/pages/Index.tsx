@@ -16,7 +16,7 @@ const Index = () => {
       title: "Sesión cerrada",
       description: "Has cerrado sesión correctamente.",
     });
-    navigate('/');
+    navigate('/auth');
   };
 
   return (

@@ -21,7 +21,7 @@ const Auth = () => {
     const checkUser = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (session) {
-        navigate('/dashboard');
+        navigate('/');
       }
     };
     checkUser();
@@ -33,7 +33,7 @@ const Auth = () => {
 
     try {
       if (isSignUp) {
-        const redirectUrl = `${window.location.origin}/dashboard`;
+        const redirectUrl = `${window.location.origin}/`;
         const { error } = await supabase.auth.signUp({
           email,
           password,
@@ -79,7 +79,7 @@ const Auth = () => {
             title: "Bienvenido",
             description: "Has iniciado sesión correctamente.",
           });
-          navigate('/dashboard');
+          navigate('/');
         }
       }
     } catch (error) {
